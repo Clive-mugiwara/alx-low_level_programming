@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m 'More Pointers,arrays and strings'
+git push
