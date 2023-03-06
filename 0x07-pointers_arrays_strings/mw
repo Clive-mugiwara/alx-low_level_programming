@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m 'Even more ponters arrays and strings'
+git push
