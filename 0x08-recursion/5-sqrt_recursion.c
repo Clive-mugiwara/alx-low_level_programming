@@ -1,28 +1,44 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - main funct
- * @n: int n
- * Return: int
+ * _sqrt - Entry point
+ * Description: Natural square root
+ * @n: Integer
+ * @x: Integer
+ * Return: -1 if negative n if 0 or 1
  */
-int _sqrt_recursion(int n)
+
+int _sqrt(int n, int x)
 {
-	return (_sqrt(n, 1));
+	if ((x * x) == n)
+	{
+		return (x);
+	}
+	if (x == n / 2)
+	{
+		return (-1);
+	}
+	return (_sqrt(n, x + 1));
 }
 
 /**
- * _sqrt - _sqrt_recursion
- * @n: integer paramtr
- * @i: integer parameter
- * Return: sqrt
+ * _sqrt_recursion - Entry point
+ * Description: Natural square root
+ * @n: Integer
+ * Return: -1 if negative n if 0 or 1
  */
-int _sqrt(int n, int i)
+
+int _sqrt_recursion(int n)
 {
+	int x = 0;
+
 	if (n < 0)
+	{
 		return (-1);
-	if ((i * i) > n)
-		return (-1);
-	if (i * i == n)
-		return (i);
-	return (_sqrt(n, i + 1));
+	}
+	if (n == 1)
+	{
+		return (1);
+	}
+	return (_sqrt(n, x));
 }
