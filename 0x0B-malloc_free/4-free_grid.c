@@ -4,7 +4,8 @@
 /**
  * free_grid - Entry point
  * Description: Frees a 2-D grid previously created by your alloc_grid function
- *
+ * @grid: Integer
+ * @height: Integer
  */
 
 void free_grid(int **grid, int height)
