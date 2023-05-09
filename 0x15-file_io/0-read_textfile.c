@@ -2,32 +2,29 @@
 #include <stdlib.h>
 
 /**
- * read_textfile- reads text file and prints it to STDOUT.
- * @filename: Requiescat
- * @letters: letters in the file
- * Return: number of bytes that are read and printed
- *  returns 0 when functon fails or filename dosen't exist
+ * read_textfile - this reads text file and prints to STDOUT
+ * @filename: file to be read
+ * @letters: leters to be read
+ * Return: returns 'w' when the number of bytes are read and printed
+ *  and 0 when function fails or filename is null
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-char *buff;
-ssize_t file_d;
-ssize_t by_w;
-ssize_t by_r;
+	char *p;
+	ssize_t des;
+	ssize_t x;
+	ssize_t y;
 
-file_d = open(filename, O_RDONLY);
-if (file_d == -1)
-	return(0);
+	des = open(filename, O_RDONLY);
+		if (des == -1)
+			return (0);
+		p = malloc(sizeof(char)*letters);
+		y = read(des, p, letters);
+		x = write(STDOUT_FILENO, p, y);
 
-buff= malloc(sizeof(char) *letters);
-by_r = read (file_d, buff, letters);
-by_w = write(STDOUT_FILENO, buff, by_r);
-
-
-free(buff);
-close(file_d);
-return(by_w);
-
+		free(p);
+		close(des);
+		return (x);
 }
-
+	
