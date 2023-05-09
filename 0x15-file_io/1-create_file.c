@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 			l++;
 	}
 
-	des = open(filename, O_CREAT | O_RDWR| O_TRUNC, 0600);
+	des = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	x = write(des, text_content, l);
 
 	if (des == -1 || x == -1)
