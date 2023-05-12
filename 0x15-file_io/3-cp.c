@@ -45,7 +45,7 @@ void close_file(int des)
 }
 
 /**
- *copier- copies contents of one file to the other
+ *main- copies contents of one file to the other
  *@argc: number of arguments given to the program
  *@argv: array of pointers to argument
  *
@@ -53,7 +53,7 @@ void close_file(int des)
  *
  */
 
-int copier(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int f, g, h, x;
 	char *buff;
